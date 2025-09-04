@@ -1,30 +1,36 @@
-# Practical Machine Learning – Weight Lifting Exercise
+# Practical Machine Learning - Proyecto Final
 
-**Objetivo.** Predecir `classe` (forma de ejecutar el ejercicio) a partir de mediciones de acelerómetros (cinturón, antebrazo, brazo, mancuerna).
+Este repositorio contiene mi entrega para el **proyecto final** del curso [Practical Machine Learning (Coursera)](https://www.coursera.org/learn/practical-machine-learning).
 
-**Datos.**
-- Train: https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv
-- Test (20 casos): https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv  
-Fuente descriptiva: (PUC-Rio, versión archivada) http://web.archive.org/web/20161224072740/http:/groupware.les.inf.puc-rio.br/har
+## 📂 Contenido
+- **PML-Proyecto.Rmd** → documento R Markdown con el análisis completo.
+- **PML-Proyecto.html** → versión compilada en HTML del informe (listo para revisión por pares).
+- **problem_id_#.txt** → archivos de predicción (20 casos de prueba), generados automáticamente.
 
-**Metodología.**
-1. Limpieza: retiro columnas con NA en train; excluyo identificadores/tiempos; `classe` como factor.
-2. Partición 70/30 (validación), CV (5-fold) en entrenamiento.
-3. Modelos: **Random Forest** (principal) y **GBM** (comparativo) con `caret`.
-4. Métrica: exactitud; reporte de importancia de variables (1 figura).
-5. Reentrenamiento final en todo el train y predicción de 20 casos.
+## 🎯 Objetivo
+Predecir la variable `classe` (forma en que se realizó el ejercicio) a partir de datos de sensores de acelerómetros en diferentes posiciones corporales. 
 
-**Resultados.**
-- RF obtiene mayor exactitud en validación; GBM se mantiene como referencia.
-- Error fuera de muestra estimado según validación (ver `index.html`).
-- Se incluyen 20 archivos `problem_id_X.txt` en `predictions/`.
+## 🛠️ Metodología
+1. **Descarga y limpieza de datos**: se eliminaron columnas irrelevantes, con demasiados valores NA y de varianza-cero.
+2. **Partición train/valid**: 70% entrenamiento, 30% validación.
+3. **Modelado**: se compararon **Random Forest (RF)** y **Gradient Boosting (GBM)** con validación cruzada de 5 folds.
+4. **Selección del mejor modelo**: se escogió el de mayor *Accuracy* en validación.
+5. **Predicciones finales**: se aplicó el modelo ganador sobre los 20 casos de `pml-testing.csv`.
 
-**Reproducibilidad.**
-- `pml_project.Rmd` (este repo) → `index.html` (self-contained).
-- Semilla fija y URLs oficiales del curso.
-- Sesión R al final del Rmd.
+## 📊 Resultados
+- El modelo ganador alcanzó una **alta exactitud** (> 99%) en el conjunto de validación.
+- Se generaron los 20 archivos de predicción en el formato requerido.
 
-**Predicciones (cuestionario).**
-- Carpeta `predictions/` con 20 archivos de texto plano (una etiqueta por archivo).
+## 🔗 Revisión por pares
+Para la evaluación:
+- Suba este repositorio a GitHub.
+- Active GitHub Pages con `PML-Proyecto.html` como página principal (`/docs` o rama `gh-pages`).
+- Entregue el enlace al repositorio y/o a la página publicada.
 
-Licencia/Datos: citar a los autores del conjunto de datos según la página del proyecto.
+## ▶️ Reproducibilidad
+- El documento fija la semilla (`set.seed`) y muestra `sessionInfo()` al final.
+- El HTML está configurado como **self-contained**.
+
+## 📚 Referencias
+- [PUC-Rio HAR dataset (archivado)](http://web.archive.org/web/20161224072740/http:/groupware.les.inf.puc-rio.br/har)
+- Curso *Practical Machine Learning* (Coursera)
