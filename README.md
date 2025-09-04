@@ -21,6 +21,9 @@ Predecir la variable `classe` (forma en que se realizó el ejercicio) a partir d
 - El modelo ganador alcanzó una **alta exactitud** (> 99%) en el conjunto de validación.
 - Se generaron los 20 archivos de predicción en el formato requerido.
 
+## ▶️ Link 
+- [Ver informe HTML en GitHub Pages](https://deejaaybrain14.github.io/Weight-Lifting-Exercise/)
+
 ## 🔗 Revisión por pares
 Para la evaluación:
 - Suba este repositorio a GitHub.
